@@ -1,0 +1,3 @@
+﻿  30.cpp
+X:\Uliana\Gig\30\30.cpp(160,75): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  30.vcxproj -> X:\Uliana\Gig\30\x64\Debug\30.exe

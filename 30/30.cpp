@@ -23,7 +23,7 @@ int main()
 {
     setlocale(0, "");
     system("title SERVER SIDE");
-    cout << "процесс сервера запущен!\n";
+    cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!\n";//asdasdfasdfasdf
     Sleep(PAUSE);
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -33,11 +33,11 @@ int main()
     int iResult = WSAStartup(MAKEWORD(2, 2), &wsaData); // The WSAStartup function initiates use of the Winsock DLL by a process: https://firststeps.ru/mfc/net/socket/r.php?2
     if (iResult != 0) {
         cout << "WSAStartup failed with error: " << iResult << "\n";
-        cout << "подключение Winsock.dll прошло с ошибкой!\n";
+        cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Winsock.dll пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!\n";
         return 1;
     }
     else {
-        cout << "подключение Winsock.dll прошло успешно!\n";
+        cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Winsock.dll пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!\n";
         Sleep(PAUSE);
     }
 
@@ -55,12 +55,12 @@ int main()
     iResult = getaddrinfo(NULL, DEFAULT_PORT, &hints, &result);
     if (iResult != 0) {
         cout << "getaddrinfo failed with error: " << iResult << "\n";
-        cout << "получение адреса и порта сервера прошло c ошибкой!\n";
+        cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ c пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!\n";
         WSACleanup(); // The WSACleanup function terminates use of the Winsock 2 DLL (Ws2_32.dll): https://docs.microsoft.com/en-us/windows/win32/api/winsock/nf-winsock-wsacleanup
         return 2;
     }
     else {
-        cout << "получение адреса и порта сервера прошло успешно!\n";
+        cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!\n";
         Sleep(PAUSE);
     }
 
@@ -71,14 +71,14 @@ int main()
     ListenSocket = socket(result->ai_family, result->ai_socktype, result->ai_protocol);
     if (ListenSocket == INVALID_SOCKET) {
         cout << "socket failed with error: " << WSAGetLastError() << "\n";
-        cout << "создание сокета прошло c ошибкой!\n";
+        cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ c пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!\n";
         freeaddrinfo(result);
         WSACleanup();
 
         return 3;
     }
     else {
-        cout << "создание сокета на сервере прошло успешно!\n";
+        cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!\n";
         Sleep(PAUSE);
     }
 
@@ -88,14 +88,14 @@ int main()
     iResult = bind(ListenSocket, result->ai_addr, (int)result->ai_addrlen); // The bind function associates a local address with a socket: https://docs.microsoft.com/en-us/windows/win32/api/winsock/nf-winsock-bind
     if (iResult == SOCKET_ERROR) {
         cout << "bind failed with error: " << WSAGetLastError() << "\n";
-        cout << "внедрение сокета по IP-адресу прошло с ошибкой!\n";
+        cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ IP-пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!\n";
         freeaddrinfo(result);
         closesocket(ListenSocket);
         WSACleanup();
         return 4;
     }
     else {
-        cout << "внедрение сокета по IP-адресу прошло успешно!\n";
+        cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ IP-пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!\n";
         Sleep(PAUSE);
     }
 
@@ -106,14 +106,14 @@ int main()
     iResult = listen(ListenSocket, SOMAXCONN); // The listen function places a socket in a state in which it is listening for an incoming connection: https://docs.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-listen
     if (iResult == SOCKET_ERROR) {
         cout << "listen failed with error: " << WSAGetLastError() << "\n";
-        cout << "прослушка информации от клиента не началась. что-то пошло не так!\n";
+        cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅ-пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ!\n";
         closesocket(ListenSocket);
         WSACleanup();
         return 5;
     }
     else {
-        cout << "начинается прослушка информации от клиента. пожалуйста, запустите клиентское приложение! (client.exe)\n";
-        // здесь можно было бы запустить некий прелоадер в отдельном потоке
+        cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ! (client.exe)\n";
+        // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -123,13 +123,13 @@ int main()
     ClientSocket = accept(ListenSocket, NULL, NULL); // The accept function permits an incoming connection attempt on a socket: https://docs.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-accept
     if (ClientSocket == INVALID_SOCKET) {
         cout << "accept failed with error: " << WSAGetLastError() << "\n";
-        cout << "соединение с клиентским приложением не установлено! печаль!\n";
+        cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ! пїЅпїЅпїЅпїЅпїЅпїЅ!\n";
         closesocket(ListenSocket);
         WSACleanup();
         return 6;
     }
     else {
-        cout << "соединение с клиентским приложением установлено успешно!\n";
+        cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!\n";
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -146,16 +146,16 @@ int main()
         message[iResult] = '\0';
 
         if (iResult > 0) {
-            cout << "процесс клиента прислал сообщение: " << message << "\n";
+            cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: " << message << "\n";
             Sleep(PAUSE);
-            cout << "байтов получено: " << iResult << "\n";
+            cout << "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: " << iResult << "\n";
             Sleep(PAUSE);
 
             //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             // Give some answer back to the sender
             const char* answer = "and hello from server!";
-            cout << "процесс сервера отправляет ответ: " << answer << "\n";
+            cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ: " << answer << "\n";
 
             int iSendResult = send(ClientSocket, answer, strlen(answer), 0); // The send function sends data on a connected socket: https://docs.microsoft.com/en-us/windows/win32/api/winsock2/nf-winsock2-send
 
@@ -165,23 +165,23 @@ int main()
 
             if (iSendResult == SOCKET_ERROR) {
                 cout << "send failed with error: " << WSAGetLastError() << "\n";
-                cout << "упс, отправка (send) ответного сообщения не состоялась ((\n";
+                cout << "пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (send) пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ((\n";
                 closesocket(ClientSocket);
                 WSACleanup();
                 return 7;
             }
             else {
-                cout << "байтов отправлено: " << iSendResult << "\n";
+                cout << "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: " << iSendResult << "\n";
                 Sleep(PAUSE);
             }
         }
         else if (iResult == 0) {
-            cout << "соединение закрывается...\n";
+            cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ...\n";
             Sleep(PAUSE);
         }
         else {
             cout << "recv failed with error: " << WSAGetLastError() << "\n";
-            cout << "упс, получение (recv) ответного сообщения не состоялось ((\n";
+            cout << "пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (recv) пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ((\n";
             closesocket(ClientSocket);
             WSACleanup();
             return 8;
@@ -195,13 +195,13 @@ int main()
     iResult = shutdown(ClientSocket, SD_SEND); // The shutdown function disables sends or receives on a socket: https://docs.microsoft.com/en-us/windows/win32/api/winsock/nf-winsock-shutdown
     if (iResult == SOCKET_ERROR) {
         cout << "shutdown failed with error: " << WSAGetLastError() << "\n";
-        cout << "упс, разрыв соединения (shutdown) выдал ошибку ((\n";
+        cout << "пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ (shutdown) пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ ((\n";
         closesocket(ClientSocket);
         WSACleanup();
         return 9;
     }
     else {
-        cout << "процесс сервера прекращает свою работу! до новых запусков! :)\n";
+        cout << "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ! пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ! :)\n";
     }
 
     // cleanup
